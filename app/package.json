@@ -1,0 +1,14 @@
+{
+  "name": "Ftlwapp",
+  "version": "0.1.0",
+  "description": "Ftlwapp application built with Electron",
+  "author": {
+    "name": "Obika Mgbemena",
+    "email": ""
+  },
+  "license": "MIT",
+  "main": "javascripts/main/index.js",
+  "dependencies": {
+
+  }
+}
