@@ -4,13 +4,69 @@
   <meta charset="UTF-8">
   <title></title>
   <link rel="stylesheet" href="stylesheets/application.css" />
-  <script src="javascripts/renderer/application.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet" type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-  <div class="message">
+  <!-- <div class="message">
     <h1 id="title"></h1>
     <div id="details"></div>
     <small id="versions"></small>
+  </div> -->
+  <div id="wrapper">
+    <div id="chronoExample">
+        <div class="values">
+          <div class="autowide">
+            <div class="module">
+              Set Time:
+            </div>
+            <div class="module size">
+              <input type="textbox" class="smallBox" id="hrs" />
+            </div>
+            <div class="module size">
+              <input type="textbox" class="smallBox" id="mins" />
+            </div>
+            <div class="module size">
+              <input type="textbox" class="smallBox" id="secs" />
+            </div>
+          </div>
+          <div class="autowide">
+            <div class="module">
+
+            </div>
+            <div class="module size">
+              Hrs
+            </div>
+            <div class="module size">
+              Mins
+            </div>
+            <div class="module size">
+              Secs
+            </div>
+          </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <div class="clsDisplay">
+          <label>Message: </label>
+          <input type="textbox" class="bigBox" value="Time Remaining ..." />
+        </div>
+        <div class="clsDisplay">
+          <label>Choose Display: </label>
+          <select id="noofDisplays">
+            <option value="">Select Display</select>
+          </select>
+        </div>
+        <div class="clsButtons">
+            <button class="startButton thoughtbot">Start</button>
+            <button class="pauseButton thoughtbot" disabled>Pause</button>
+            <button class="resumeButton thoughtbot hide">Resume</button>
+            <button class="stopButton thoughtbot" disabled>Stop</button>
+            <button class="exitButton thoughtbot">Exit</button>
+        </div>
+    </div>
   </div>
+  <script src="javascripts/renderer/application.js" type="text/javascript"></script>
 </body>
 </html>

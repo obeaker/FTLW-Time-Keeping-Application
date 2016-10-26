@@ -9,6 +9,8 @@
   "license": "MIT",
   "main": "javascripts/main/index.js",
   "dependencies": {
-
+    "electron-cookies": "^1.1.0",
+    "jquery": "^3.1.1",
+    "jsdom": "^9.8.0"
   }
 }

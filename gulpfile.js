@@ -1,5 +1,14 @@
 require('bozon/lib/tasks');
 
+var bozon = require('bozon/lib/bozon');
+
+bozon.hooks.push(
+  'scripts:lib'
+)
+
+bozon.task('scripts:lib', function () {
+  return bozon.src('javascripts/lib/**/*.*').pipe(bozon.dest('javascripts/lib'))
+})
 //== Bozon tasks =============================================================================
 //
 // Bozon carries out common tasks: start, test, clear, package
@@ -47,10 +56,11 @@ require('bozon/lib/tasks');
 // Bozons build-pipeline contains the following tasks in the given order:
 // 1. scripts:main
 // 2. scripts:renderer
-// 3. styles
-// 4. html
-// 5. images
-// 6. config
+// 3. scripts:lib
+// 4. styles
+// 5. html
+// 6. images
+// 7. config
 //
 // If you want to add your task into a defined position, use
 // `bozon.buildTaskBefore(existingTaskName, newTaskName, [dependencies,] taskFunction)` or
@@ -71,6 +81,6 @@ require('bozon/lib/tasks');
 
 //== Task names that are already used by bozon ===============================================
 //
-// html, styles, images, scripts:main, scripts:renderer, prepare:app
+// html, styles, images, scripts:main, scripts:renderer, scripts:lib, prepare:app
 //
 //============================================================================================
