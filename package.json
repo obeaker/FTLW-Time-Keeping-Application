@@ -19,7 +19,7 @@
     "appId": "com.electron.ftlwapp",
     "category": "your.app.category.type",
     "win": {
-      "iconUrl": "https://github.com/railsware/bozon/blob/master/lib/templates/images/electron.ico?raw=true"
+      "iconUrl": "app/images/favicon.ico"
     },
     "mac": {
       "icon": "resources/icon.icns",

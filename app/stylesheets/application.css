@@ -4,9 +4,13 @@
   color: #fff;
 }
 
-#chronoExample {
+#chronoExample, .msg {
   font-family: 'Proza Libre', sans-serif;
   font-size: 40px;
+}
+
+.valignTop {
+  vertical-align: top;
 }
 
 .hide {
@@ -19,12 +23,17 @@
 
 #wrapper {
   width: 600px;
-  margin: 100px auto;
+  margin: 65px auto;
+}
+
+#wrapperCTDW {
+  width: 600px;
+  margin: 5px auto;
 }
 
 #wrapper1 {
   width: 98%;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 
 #countdown {
@@ -80,7 +89,7 @@ button.thoughtbot:active {
   box-shadow: inset 0px 0px 0px 1px rgba(255, 115, 100, 0.4);
 }
 
-button.thoughtbot:disabled {
+button.thoughtbot:disabled, input:disabled {
   background-color: #ccc;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ccc), color-stop(50%, #ccc), color-stop(50%, #ccc), color-stop(100%, #ccc));
   background-image: -webkit-linear-gradient(top, #ccc 0%, #ccc 50%, #ccc 50%, #ccc 100%);
@@ -130,7 +139,7 @@ select {
 }
 
 .clsDisplay, .values {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .clsButtons {
@@ -184,36 +193,99 @@ select {
 	}
 }
 
-/*html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
+#timeDisplay, .textDisplay {
+  font-size: 85px;
+  font-family: "photon-entypo";
 }
 
-body {
-  font-family: -apple-system, "Helvetica Neue", Helvetica, sans-serif;
+#chronoExample span.textDisplay {
+  font-size: 32px;
+  font-family: "photon-entypo";
 }
 
-.message {
-  position: absolute;
-  width: 500px;
-  height: 250px;
-  top: 50%;
-  left: 50%;
-  color: #777;
-  font-weight: 200;
-  text-align: center;
-  margin-top: -125px;
-  margin-left: -250px;
+#chronoExample div.values {
+  padding-top: 20px;
 }
 
-.message h1 {
-  font-size: 50px;
+#displayMsgs{
+  padding: 40px 0px;
+}
+
+@media screen and (min-width: 768px)
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.jumbotron {
+    padding:  20px 30px 30px;
+    margin-bottom: 30px;
+    font-weight: 200;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
   font-weight: 100;
-  color: #333;
+  text-align: center;
+  font-size: 200px;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  top: 50%;
+  transform: translate(-1%, -50%);
 }
 
-.message div {
-  margin-bottom: 10px;
-}*/
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #0067AC;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #362C66;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 70px;
+}
+
+#showNewYear {
+  background: black;
+  text-align: center;
+  padding-bottom: 40px;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  top: 50%;
+  transform: translate(-1%, -50%);
+  color: white;
+  font-size: 150px;
+  font-family: "photon-entypo";
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}

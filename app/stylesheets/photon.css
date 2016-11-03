@@ -748,7 +748,7 @@ img {
   text-overflow: ellipsis;
 }
 .nav-group-item:active, .nav-group-item.active {
-  background-color: #dcdfe1;
+  background-color: #6db3fd;
 }
 .nav-group-item .icon {
   width: 19px;
@@ -762,9 +762,9 @@ img {
 }
 
 .nav-group-title {
-  margin: 0;
+  /*margin: 0;*/
   padding: 10px 10px 2px;
-  font-size: 12px;
+  /*font-size: 12px;*/
   font-weight: 500;
   color: #666666;
 }

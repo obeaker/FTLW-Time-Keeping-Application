@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FTLW Timer APP - New Year Display</title>
+  <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" /> -->
+  <link href="./stylesheets/application.css" rel="stylesheet">
+</head>
+<body>
+  <div id="clockdiv">
+    <div id="displayMsgs" class="text-left textDisplay" style="display: block;
+      background: black; text-align: center; padding-bottom: 40px;">        </div>
+    <div>
+      <span class="days1"></span>
+      <div class="smalltext">Days</div>
+    </div>
+    <div>
+      <span class="hours1"></span>
+      <div class="smalltext">Hours</div>
+    </div>
+    <div>
+      <span class="minutes1"></span>
+      <div class="smalltext">Minutes</div>
+    </div>
+    <div>
+      <span class="seconds1"></span>
+      <div class="smalltext">Seconds</div>
+    </div>
+  </div>
+  <div id="showNewYear" class="hide">
+    <span class="blink_me"> Happy New Year !!! </span>
+  </div>
+  <script> require("./javascripts/renderer/application.js")</script>
+</body>
+</html>

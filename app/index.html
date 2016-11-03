@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ftlwApp">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>FTLW Timer APP</title>
   <link rel="stylesheet" href="stylesheets/photon.css" />
   <link rel="stylesheet" href="stylesheets/application.css" />
+  <link rel="stylesheet" href="stylesheets/jquery-ui.css" />
   <link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet" type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body ng-controller="mainController">
   <!-- <div class="message">
     <h1 id="title"></h1>
     <div id="details"></div>
@@ -19,75 +20,27 @@
     <div class="pane-group">
       <div class="pane pane-sm sidebar">
             <nav class="nav-group">
-              <h5 class="nav-group-title">Timers</h5>
-              <a href="test.html" class="nav-group-item">
+              <h2 class="nav-group-title">Timers</h2>
+              <a href="#home" class="nav-group-item" ng-class="{active: $route.current.activetab == 'home'}">
                 <span class="icon icon-home"></span>
+                Home
+              </a>
+              <a href="#countup" class="nav-group-item" ng-class="{active: $route.current.activetab == 'countup'}">
+                <span class="icon icon-plus-circled"></span>
                 Count UP Timer
               </a>
-              <a class="nav-group-item active">
-                <span class="icon icon-light-up"></span>
+              <a href="#countdown" class="nav-group-item" ng-class="{active: $route.current.activetab == 'countdown'}">
+                <span class="icon icon-minus-circled"></span>
                 Count Down Timer
               </a>
-              <a class="nav-group-item">
-                <span class="icon icon-download"></span>
+              <a href="#newyear" class="nav-group-item" ng-class="{active: $route.current.activetab == 'newyear'}">
+                <span class="icon icon-calendar"></span>
                 New Year Timer
               </a>
             </nav>
           </div>
-      <div class="pane">
-        <div id="wrapper">
-          <div id="chronoExample">
-              <div class="values">
-                <div class="autowide">
-                  <div class="module">
-                    Set Time:
-                  </div>
-                  <div class="module size">
-                    <input type="textbox" class="smallBox" id="hrs" />
-                  </div>
-                  <div class="module size">
-                    <input type="textbox" class="smallBox" id="mins" />
-                  </div>
-                  <div class="module size">
-                    <input type="textbox" class="smallBox" id="secs" />
-                  </div>
-                </div>
-                <div class="autowide">
-                  <div class="module">
-
-                  </div>
-                  <div class="module size">
-                    Hrs
-                  </div>
-                  <div class="module size">
-                    Mins
-                  </div>
-                  <div class="module size">
-                    Secs
-                  </div>
-                </div>
-              </div>
-              <div class="clearfix">
-              </div>
-              <div class="clsDisplay">
-                <label>Message: </label>
-                <input type="textbox" class="bigBox" value="Time Remaining ..." />
-              </div>
-              <div class="clsDisplay">
-                <label>Choose Display: </label>
-                <select id="noofDisplays">
-                  <option value="">Select Display</select>
-                </select>
-              </div>
-              <div class="clsButtons">
-                  <button class="startButton thoughtbot">Start</button>
-                  <button class="pauseButton thoughtbot" disabled>Pause</button>
-                  <button class="resumeButton thoughtbot hide">Resume</button>
-                  <button class="stopButton thoughtbot" disabled>Stop</button>
-                  <button class="exitButton thoughtbot">Exit</button>
-              </div>
-          </div>
-        </div>
+      <div id="main" class="pane">
+        <div ng-view></div>
       </div>
     </div>
   </div>
