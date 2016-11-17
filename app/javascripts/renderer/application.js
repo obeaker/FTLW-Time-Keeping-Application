@@ -53,8 +53,8 @@ ftlwApp.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 ftlwApp.controller('mainController', function($scope, $route) {
 	$scope.$route = $route;
-	$scope.message = 'Welcome to Fountain of the Living Word Church Timer. <br> Select '+
-	'a timer from the left side';
+	//$scope.message = 'Welcome to Fountain of the Living Word Church Timer. <br> Select '+
+	//'a timer from the left side';
 });
 
 ftlwApp.controller('countdownController', function($scope, $route) {
@@ -141,7 +141,7 @@ ftlwApp.controller('countupController', function($scope, $route) {
 			let useTimer = "loaded"
 			let pageLoad = "1";
 
-      console.log("start button clicked");
+      //console.log("start button clicked");
 
       ipcRenderer.send('start-prefs', {display:a, setTimer:useTimer, loadPage:pageLoad});
 
@@ -299,6 +299,10 @@ function initializeClock(id, endtime) {
 		$('#clockdiv .minutes1').html(('0' + t.minutes).slice(-2));
 		$('#clockdiv .seconds1').html(('0' + t.seconds).slice(-2));
 
+		$('#clockdiv2 .hours').html(('0' + t.hours).slice(-2));
+		$('#clockdiv2 .minutes').html(('0' + t.minutes).slice(-2));
+		$('#clockdiv2 .seconds').html(('0' + t.seconds).slice(-2));
+
 		if (t.total <= 0) {
       clearInterval(timeinterval);
 			$('#clockdiv').css("display","none");
@@ -441,7 +445,8 @@ else if (type === "countup"){
 	timer.start();
 }
 else if (type === "newyear"){
-	var newYR = 'November 3 2016 00:43:00 GMT-0400';
+	//var newYR = 'November 11 2016 19:47:00 GMT-0500';
+	//console.log(new Date(Date.parse(newYR)));
 	initializeClock('clockdiv', new Date(Date.parse(newYR)));
 }
 //$('#chronoExample1 .values').html(timer.getTimeValues().toString());
@@ -451,6 +456,9 @@ $('#chronoExample1 .seconds').html(timer.getTimeValues().seconds);
 $('#chronoExample .hours').html(timer.getTimeValues().hours);
 $('#chronoExample .minutes').html(timer.getTimeValues().minutes);
 $('#chronoExample .seconds').html(timer.getTimeValues().seconds);
+$('#chronoExample2 .hours').html(timer.getTimeValues().hours);
+$('#chronoExample2 .minutes').html(timer.getTimeValues().minutes);
+$('#chronoExample2 .seconds').html(timer.getTimeValues().seconds);
 
 $('#displayMsgs').html(displaymsg);
 
@@ -504,10 +512,14 @@ timer.addEventListener('secondsUpdated', function (e) {
 	$('#chronoExample .hours').html(timer.getTimeValues().hours);
   $('#chronoExample .minutes').html(timer.getTimeValues().minutes);
   $('#chronoExample .seconds').html(timer.getTimeValues().seconds);
+	$('#chronoExample2 .hours').html(timer.getTimeValues().hours);
+  $('#chronoExample2 .minutes').html(timer.getTimeValues().minutes);
+  $('#chronoExample2 .seconds').html(timer.getTimeValues().seconds);
 });
 
 timer.addEventListener('targetAchieved', function (e) {
     $('#chronoExample1 .values').html('Time UP!!');
+		$('#chronoExample2 .values').html('Time UP!!');
 });
 
 timer.addEventListener('started', function (e) {
@@ -517,10 +529,12 @@ timer.addEventListener('started', function (e) {
 	$('#chronoExample .hours').html(timer.getTimeValues().hours);
   $('#chronoExample .minutes').html(timer.getTimeValues().minutes);
   $('#chronoExample .seconds').html(timer.getTimeValues().seconds);
+	$('#chronoExample2 .hours').html(timer.getTimeValues().hours);
+  $('#chronoExample2 .minutes').html(timer.getTimeValues().minutes);
+  $('#chronoExample2 .seconds').html(timer.getTimeValues().seconds);
 });
 
 ipcRenderer.on('loaded' , function(event , data) {
-	//console.log("loaded");
 	timer.start();
 });
 

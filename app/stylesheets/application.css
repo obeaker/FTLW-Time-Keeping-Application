@@ -4,6 +4,17 @@
   color: #fff;
 }
 
+#chronoExample2 {
+    font-family: 'Black Ops One', cursive;
+    font-size: 80px;
+    color: #fff;
+}
+
+.textDisplay1 {
+    font-size: 30px;
+    font-family: "photon-entypo";
+}
+
 #chronoExample, .msg {
   font-family: 'Proza Libre', sans-serif;
   font-size: 40px;
@@ -32,7 +43,7 @@
 }
 
 #wrapper1 {
-  width: 98%;
+  width: 100%;
   margin: 60px auto;
 }
 
@@ -235,7 +246,7 @@ select {
     text-align: right;
 }
 
-#clockdiv{
+#clockdiv {
   font-family: sans-serif;
   color: #fff;
   display: inline-block;
@@ -249,14 +260,40 @@ select {
   transform: translate(-1%, -50%);
 }
 
-#clockdiv > div{
+#clockdiv1{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 200px;
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  top: 60%;
+  transform: translate(-1%, -50%);
+}
+
+#clockdiv2 {
+    font-family: sans-serif;
+    color: #fff;
+    display: block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 60px;
+    position: absolute;
+    margin: 0;
+    width: 98%;
+}
+
+#clockdiv > div, #clockdiv1 > div, #clockdiv2 > div {
     padding: 10px;
     border-radius: 3px;
     background: #0067AC;
     display: inline-block;
 }
 
-#clockdiv div > span{
+#clockdiv div > span, #clockdiv1 div > span, #clockdiv2 div > span{
     padding: 15px;
     border-radius: 3px;
     background: #362C66;
@@ -266,6 +303,11 @@ select {
 .smalltext{
     padding-top: 5px;
     font-size: 70px;
+}
+
+.smalltext1 {
+    padding-top: 10px;
+    font-size: 25px;
 }
 
 #showNewYear {
@@ -284,8 +326,9 @@ select {
 
 .blink_me {
   animation: blinker 1s linear infinite;
+  transition: color 2s, font-size 2s;
 }
 
 @keyframes blinker {
-  50% { opacity: 0; }
+  50% { opacity: 0; font-size: 40px;}
 }

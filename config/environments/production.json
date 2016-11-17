@@ -1,4 +1,7 @@
 {
   "reload": false,
-  "devTools": false
+  "devTools": false,
+  "scripts": {
+    "build": "cp ../../resources/icon.icns Ftlwapp.app/Contents/Resources/icon.icns"
+  },
 }

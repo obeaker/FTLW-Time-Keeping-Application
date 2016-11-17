@@ -5,7 +5,8 @@ var bozon = require('bozon/lib/bozon');
 bozon.hooks.push(
   'scripts:lib',
   'fonts',
-  'pages'
+  'pages',
+  'resources'
 )
 
 bozon.task('scripts:lib', function () {
@@ -18,6 +19,10 @@ bozon.task('fonts', function () {
 
 bozon.task('pages', function () {
   return bozon.src('pages/**/*.*').pipe(bozon.dest('pages'))
+})
+
+bozon.task('resources', function () {
+  return bozon.src('../resources/**/*.*').pipe(bozon.dest('resources'))
 })
 //== Bozon tasks =============================================================================
 //

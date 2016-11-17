@@ -30,7 +30,7 @@ electron.app.on('ready', function() {
   ses.clearStorageData();
   //mainwindow.webContents.openDevTools()
 
-  var secmainWindow
+  var secmainWindow, thirdmainWindow
 
   function createInsertWindow(a,b,c) {
     if (a !== "" ) {
@@ -55,6 +55,13 @@ electron.app.on('ready', function() {
       });
     }
 
+    thirdmainWindow = new electron.BrowserWindow({
+      width: 420,
+      height: 200,
+      show: true,
+      backgroundColor: '#000'
+    });
+
     var useFile;
     if (c === "1") {
       useFile = '/countDownDisplay.html';
@@ -74,6 +81,14 @@ electron.app.on('ready', function() {
     secmainWindow.on('closed',function() {
         secmainWindow = null;
     });
+
+    thirdmainWindow.loadURL('file://' + path.join(__dirname, '..', '..') + '/smallwindow.html')
+    thirdmainWindow.webContents.on('did-finish-load', function(){
+      mainwindow.webContents.send(b, {msg:'hello from loaded process'});
+    });
+    thirdmainWindow.on('closed',function() {
+        thirdmainWindow = null;
+    });
   }
 
   ipcMain.on('start-prefs', function(event, data) {
@@ -87,17 +102,23 @@ electron.app.on('ready', function() {
     if(!secmainWindow) {
       dialog.showErrorBox("Stop Button Clicked", "You clicked the stop button multiple time")
     }
+
     mainwindow.webContents.send('mainStop', {msg:'hello from loaded process'});
+    if(thirdmainWindow) {
+      thirdmainWindow.close()
+    }
     return (secmainWindow.isVisible()) ? secmainWindow.close() : secmainWindow.show();
   });
 
   ipcMain.on('pause-prefs', function() {
     secmainWindow.webContents.send('pause' , {msg:'hello from main process'});
+    thirdmainWindow.webContents.send('pause' , {msg:'hello from main process'});
     mainwindow.webContents.send('mainPause', {msg:'hello from loaded process'});
   });
 
   ipcMain.on('resume-prefs', function() {
     secmainWindow.webContents.send('resume' , {msg:'hello from resume process'});
+    thirdmainWindow.webContents.send('resume' , {msg:'hello from resume process'});
     mainwindow.webContents.send('mainResume', {msg:'hello from loaded process'});
   });
 
@@ -144,6 +165,10 @@ electron.app.on('ready', function() {
   mainwindow.on('closed',function() {
     if(secmainWindow) {
       secmainWindow.close();
+    }
+
+    if(thirdmainWindow) {
+      thirdmainWindow.close();
     }
     mainWindow = null;
   });

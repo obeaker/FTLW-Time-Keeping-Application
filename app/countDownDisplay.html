@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>FTLW Timer APP - Countdown/Countup Display</title>
+  <title>FTLW Timer APP - Timer Display</title>
   <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
   <!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" /> -->
   <link href="./stylesheets/application.css" rel="stylesheet">
@@ -14,13 +14,19 @@
       <div class="jumbotron text-center">
         <div id="timeDisplay" class="text-right">        </div>
         <div id="displayMsgs" class="text-left textDisplay">        </div>
-        <div class="values text-left">
-          <span class="hours">0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</span>
-          <span class="minutes">0</span><span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</span>
-          <span class="seconds">0</span><br />
-          <span class="textDisplay">Hours</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span class="textDisplay">Minutes</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-          <span class="textDisplay">Seconds</span>
+      </div>
+      <div id="clockdiv1">
+        <div>
+          <span class="hours"></span>
+          <div class="smalltext">Hours</div>
+        </div>
+        <div>
+          <span class="minutes"></span>
+          <div class="smalltext">Minutes</div>
+        </div>
+        <div>
+          <span class="seconds"></span>
+          <div class="smalltext">Seconds</div>
         </div>
       </div>
     </div>
