@@ -1,6 +1,6 @@
-# Ftlwapp
+# FTLW Time Keeping Application
 
-> My Ftlwapp app built with Electron
+> FTLW Time Keeping Application built with Electron
 
 
 ## Dev
