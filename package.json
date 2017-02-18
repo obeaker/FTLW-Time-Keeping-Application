@@ -18,11 +18,13 @@
   "build": {
     "appId": "com.electron.ftlwapp",
     "category": "your.app.category.type",
+    "dmg": {
+      "icon": "resources/icon.icns"
+    },
     "win": {
       "iconUrl": "app/images/favicon.ico"
     },
     "mac": {
-      "icon": "resources/icon.icns",
       "target": "dmg"
     }
   }
